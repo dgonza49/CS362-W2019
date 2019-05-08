@@ -658,9 +658,9 @@ int adventurerCard(struct gameState *state){
 		
 		if (state->deckCount[currentPlayer] <1){//if the deck is empty we need to shuffle discard and add to deck
 		  //Bug created here where there is no shuffle
-		  /****************************
-		  //shuffle(currentPlayer, state);
-		  ****************************/
+		 
+		  shuffle(currentPlayer, state);
+		
 		}
 		drawCard(currentPlayer, state);
 		cardDrawn = state->hand[currentPlayer][state->handCount[currentPlayer]-1];//top card of hand is most recently drawn card.
