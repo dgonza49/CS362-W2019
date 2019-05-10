@@ -12,7 +12,7 @@ int main () {
 	struct gameState g;
 	int seed = 1000;
 	
-	int k[10] = {7, 8, 9, 10, 11, 12, 13, 14, 15, 16};
+	int k[10] = {village, smithy, gardens, mine, feast, adventurer, council_room, salvager, sea_hag, steward};
 	initializeGame(2, k, seed, &g);
 	//initialize Hand with one gold
 	g.handCount[0] = 1;

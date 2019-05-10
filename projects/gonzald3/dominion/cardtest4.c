@@ -9,11 +9,11 @@
 int main () {
 	printf("TESTING council_room \n");
 	struct gameState G;
-	int k[10] = {7, 8, 9, 10, 11, 12, 13, 14, 15, 16};
+	int k[10] = {village, smithy, gardens, mine, feast, adventurer, council_room, salvager, sea_hag, steward};
 
 	initializeGame(2, k, 3, &G);
 	G.handCount[0] = 3;
-	G.hand[0][0] = 8; //council_room
+	G.hand[0][0] = council_room; //council_room
 	int preNumCards = G.handCount[0];
 	int preNumBuys = G.numBuys;
 

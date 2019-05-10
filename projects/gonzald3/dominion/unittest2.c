@@ -20,7 +20,7 @@ int main()
 	int numplayers = rand() % (MAX_PLAYERS - 1) + 1;
 	int player = rand() % numplayers;
 	struct gameState g;
-	int k[10] = {7, 8, 9, 10, 11, 12, 13, 14, 15, 16};
+	int k[10] = {village, smithy, gardens, mine, feast, adventurer, council_room, salvager, sea_hag, steward};
 	initializeGame(numplayers, k, seed, &g);
 
 	 // Copy gamestate for later comparison
@@ -40,7 +40,7 @@ int main()
 	printf("Shuffle Percentage: %d/%d \n", shuffleSuccess, numtests);
 
 	if(unshuffledNum < numtests )
-			printf("TEST PASSED! \n");
+			printf("TEST PASSED \n");
 	else
 		printf("TEST FAILED \n");
 

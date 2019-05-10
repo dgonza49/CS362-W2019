@@ -15,7 +15,7 @@ int main () {
 	printf("TESTING adventurer \n");
 
 	struct gameState G;
-	int k[10] = {7, 8, 9, 10, 11, 12, 13, 14, 15, 16}; //7 is adventurer
+	int k[10] = {village, smithy, gardens, mine, feast, adventurer, council_room, salvager, sea_hag, steward}; //7 is adventurer
 
 	initializeGame(2, k, 4, &G);
 

@@ -13,7 +13,7 @@ int main(){
 	printf("TESTING buyCard() \n");
 	struct gameState state;
 	int success;
-	int k[10] = {7, 8, 9, 10, 11, 12, 13, 14, 15, 16};
+	int k[10] = {village, smithy, gardens, mine, feast, adventurer, council_room, salvager, sea_hag, steward};
 	int numBuys = 1;
 	int numCoins = 1;
 	if(numBuys == 1 || numCoins == 1){
