@@ -20,7 +20,7 @@ int main () {
 	struct gameState G;
 	int player1 = 0;
 	int initHandCount;
-	time_t end  = time(NULL) + 7; //7s
+	//time_t end  = time(NULL) + 7; //7s
 	int effect = 1;
 	if(effect == 1)
 		effect = 0;
@@ -41,24 +41,15 @@ int main () {
 	}
 
 	initHandCount = 6;
-
-	while(1){
-		if(time(NULL) >= end){
-			playCard(feast, 1, 0, 0, &gTest);
-			break;
-		}
-
-	}
+	playCard(feast, 1, 0, 0, &gTest);
 		
-	
 	// Testing that current player has drawn 1 card 
-	if (gTest.handCount[player1] == initHandCount + 1) {
+	if (gTest.handCount[player1] == initHandCount) {
 		printf("TEST PASSED\n");
 	}
 	else {
 		printf("TEST Failed\n");
-		printf("Expected hand count of %d, actual hand count is %d\n\n", initHandCount, gTest.handCount[player1]);
-		printf("TEST PASSED\n");
+		printf("Expected hand count of %d, actual hand count is %d\n", initHandCount, gTest.handCount[player1]);
 	}
 
 

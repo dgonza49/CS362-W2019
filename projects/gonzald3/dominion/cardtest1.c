@@ -57,8 +57,7 @@ int main() {
 		}
 		else {
 			printf("TEST Failed\n");
-			printf("Expected hand count of %d, actual hand count is %d\n\n", initHandCount+2, gTest.handCount[player1]);
-			printf("TEST PASSED\n");
+			printf("Expected hand count of %d, actual hand count is %d\n", initHandCount+2, gTest.handCount[player1]);
 		}
 	}
 

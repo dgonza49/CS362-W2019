@@ -8,13 +8,13 @@ Calls executed:0.00% of 98
 Creating 'dominion.c.gcov'
 
 TESTING shuffle() of Kingdom Cards
-Shuffle Percentage: 100/100 
-TEST PASSED 
+Shuffle Percentage: 0/100 
+TEST FAILED 
 File 'dominion.c'
-Lines executed:1.50% of 602
-Branches executed:1.45% of 415
-Taken at least once:0.72% of 415
-Calls executed:2.04% of 98
+Lines executed:14.95% of 602
+Branches executed:15.90% of 415
+Taken at least once:13.01% of 415
+Calls executed:7.14% of 98
 Creating 'dominion.c.gcov'
 
 TESTING buyCard() 
@@ -38,8 +38,6 @@ Creating 'dominion.c.gcov'
 TESTING smithy 
 TEST Failed
 Expected hand count of 8, actual hand count is 10
-
-TEST PASSED
 File 'dominion.c'
 Lines executed:18.94% of 602
 Branches executed:22.89% of 415
@@ -48,22 +46,17 @@ Calls executed:12.24% of 98
 Creating 'dominion.c.gcov'
 
 TESTING adventurer 
-TEST Failed
-Expected hand count of 6, actual hand count is 5
-
 TEST PASSED
 File 'dominion.c'
-Lines executed:16.78% of 602
-Branches executed:17.35% of 415
-Taken at least once:13.49% of 415
-Calls executed:9.18% of 98
+Lines executed:18.44% of 602
+Branches executed:23.37% of 415
+Taken at least once:14.46% of 415
+Calls executed:11.22% of 98
 Creating 'dominion.c.gcov'
 
 TESTING feast 
 TEST Failed
 Expected hand count of 6, actual hand count is 5
-
-TEST PASSED
 File 'dominion.c'
 Lines executed:16.78% of 602
 Branches executed:17.35% of 415
