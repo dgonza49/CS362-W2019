@@ -65,11 +65,12 @@ Calls executed:9.18% of 98
 Creating 'dominion.c.gcov'
 
 TESTING council_room 
-Test PASSED
+HandCount TEST PASSED
+numBuys TEST FAILED
 File 'dominion.c'
-Lines executed:21.76% of 602
-Branches executed:26.27% of 415
-Taken at least once:15.90% of 415
-Calls executed:16.33% of 98
+Lines executed:20.76% of 602
+Branches executed:24.34% of 415
+Taken at least once:15.42% of 415
+Calls executed:13.27% of 98
 Creating 'dominion.c.gcov'
 
