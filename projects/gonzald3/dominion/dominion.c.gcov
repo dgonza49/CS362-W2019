@@ -150,21 +150,21 @@ branch  1 taken 94%
         -:  111:	    {
         -:  112:	      //check if card is a 'Victory' Kingdom card
        10:  113:	      if (kingdomCards[j] == great_hall || kingdomCards[j] == gardens)
-branch  0 taken 90% (fallthrough)
-branch  1 taken 10%
-branch  2 taken 11% (fallthrough)
-branch  3 taken 89%
-        -:  114:		{
-        4:  115:		  if (numPlayers == 2){ 
 branch  0 taken 100% (fallthrough)
 branch  1 taken 0%
-        2:  116:		    state->supplyCount[i] = 8; 
+branch  2 taken 10% (fallthrough)
+branch  3 taken 90%
+        -:  114:		{
+        2:  115:		  if (numPlayers == 2){ 
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        1:  116:		    state->supplyCount[i] = 8; 
         -:  117:		  }
     #####:  118:		  else{ state->supplyCount[i] = 12; }
         -:  119:		}
         -:  120:	      else
         -:  121:		{
-        8:  122:		  state->supplyCount[i] = 10;
+        9:  122:		  state->supplyCount[i] = 10;
         -:  123:		}
        10:  124:	      break;
         -:  125:	    }
