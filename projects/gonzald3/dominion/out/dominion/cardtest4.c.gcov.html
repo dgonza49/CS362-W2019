@@ -1,0 +1,171 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - coverage.info - dominion/cardtest4.c</title>
+  <link rel="stylesheet" type="text/css" href="../gcov.css">
+</head>
+
+<body>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="title">LCOV - code coverage report</td></tr>
+    <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+
+    <tr>
+      <td width="100%">
+        <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="35%" class="headerValue"><a href="../index.html">top level</a> - <a href="index.html">dominion</a> - cardtest4.c<span style="font-size: 80%;"> (source / <a href="cardtest4.c.func-sort-c.html">functions</a>)</span></td>
+            <td width="5%"></td>
+            <td width="15%"></td>
+            <td width="10%" class="headerCovTableHead">Hit</td>
+            <td width="10%" class="headerCovTableHead">Total</td>
+            <td width="15%" class="headerCovTableHead">Coverage</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Test:</td>
+            <td class="headerValue">coverage.info</td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntry">26</td>
+            <td class="headerCovTableEntry">28</td>
+            <td class="headerCovTableEntryHi">92.9 %</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Date:</td>
+            <td class="headerValue">2019-05-11 14:31:06</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntry">1</td>
+            <td class="headerCovTableEntry">1</td>
+            <td class="headerCovTableEntryHi">100.0 %</td>
+          </tr>
+          <tr><td><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+  </table>
+
+  <table cellpadding=0 cellspacing=0 border=0>
+    <tr>
+      <td><br></td>
+    </tr>
+    <tr>
+      <td>
+<pre class="sourceHeading">          Line data    Source code</pre>
+<pre class="source">
+<a name="1"><span class="lineNum">       1 </span>            : #include &quot;dominion.h&quot;</a>
+<span class="lineNum">       2 </span>            : #include &quot;dominion_helpers.h&quot;
+<span class="lineNum">       3 </span>            : #include &quot;rngs.h&quot;
+<span class="lineNum">       4 </span>            : #include &lt;stdio.h&gt;
+<span class="lineNum">       5 </span>            : #include &lt;math.h&gt;
+<span class="lineNum">       6 </span>            : #include &lt;stdlib.h&gt;
+<span class="lineNum">       7 </span>            : #include &lt;assert.h&gt;
+<a name="8"><span class="lineNum">       8 </span>            : #include &lt;string.h&gt;</a>
+<span class="lineNum">       9 </span>            : 
+<span class="lineNum">      10 </span><span class="lineCov">          1 : int main () {</span>
+<span class="lineNum">      11 </span>            :         
+<span class="lineNum">      12 </span><span class="lineCov">          1 :         printf(&quot;TESTING council_room \n&quot;);</span>
+<span class="lineNum">      13 </span>            :         struct gameState G;          
+<span class="lineNum">      14 </span>            :         struct gameState gTest;          
+<span class="lineNum">      15 </span><span class="lineCov">          1 :         int seed = 1000;</span>
+<span class="lineNum">      16 </span><span class="lineCov">          1 :         int k[10] = {village, smithy, gardens, mine, feast, adventurer, council_room, salvager, sea_hag, steward};</span>
+<span class="lineNum">      17 </span><span class="lineCov">          1 :         int player1 = 0;</span>
+<span class="lineNum">      18 </span><span class="lineCov">          1 :         int players = 2;</span>
+<span class="lineNum">      19 </span><span class="lineCov">          1 :         int numTests = 1; </span>
+<span class="lineNum">      20 </span>            :         //int card = smithy;
+<span class="lineNum">      21 </span><span class="lineCov">          1 :         int effect = 1;</span>
+<span class="lineNum">      22 </span>            :         //int initHandCount;
+<span class="lineNum">      23 </span>            :         int position;
+<span class="lineNum">      24 </span>            : 
+<span class="lineNum">      25 </span>            : 
+<span class="lineNum">      26 </span><span class="lineCov">          1 :         if(effect == 1)</span>
+<span class="lineNum">      27 </span><span class="lineCov">          1 :                 effect = 0;</span>
+<span class="lineNum">      28 </span>            : 
+<span class="lineNum">      29 </span>            :         int i;
+<span class="lineNum">      30 </span>            :         int n;
+<span class="lineNum">      31 </span><span class="lineCov">          2 :         for (i = 0; i &lt; numTests; i++) {</span>
+<span class="lineNum">      32 </span>            : 
+<span class="lineNum">      33 </span>            :                 // initialize the game
+<span class="lineNum">      34 </span><span class="lineCov">          1 :                 initializeGame(players, k, seed, &amp;G);</span>
+<span class="lineNum">      35 </span>            : 
+<span class="lineNum">      36 </span>            :                 // copy over to test gameState
+<span class="lineNum">      37 </span><span class="lineCov">          1 :                 memcpy(&amp;gTest, &amp;G, sizeof(struct gameState));</span>
+<span class="lineNum">      38 </span>            : 
+<span class="lineNum">      39 </span>            :                 // load hand
+<span class="lineNum">      40 </span><span class="lineCov">          1 :                 gTest.hand[player1][0] = council_room;</span>
+<span class="lineNum">      41 </span><span class="lineCov">          1 :                 int preNumCards = gTest.handCount[0];</span>
+<span class="lineNum">      42 </span><span class="lineCov">          1 :                 int preNumBuys = gTest.numBuys;</span>
+<span class="lineNum">      43 </span>            :                 //int kingCards = 14;
+<span class="lineNum">      44 </span><span class="lineCov">          5 :                 for(n = 1; n &lt; 5; n++){</span>
+<span class="lineNum">      45 </span><span class="lineCov">          4 :                         gTest.hand[player1][n] = k[n+3];</span>
+<span class="lineNum">      46 </span>            :                 //kingCards++;
+<span class="lineNum">      47 </span>            :                 }
+<span class="lineNum">      48 </span>            : 
+<span class="lineNum">      49 </span>            :                 //initHandCount = 6;
+<span class="lineNum">      50 </span><span class="lineCov">          1 :                 position = gTest.hand[player1][0]; //smithy ready to play</span>
+<span class="lineNum">      51 </span>            : 
+<span class="lineNum">      52 </span><span class="lineCov">          1 :                 effect = cardEffect(council_room, 0, 0, 0, &amp;gTest, position, 0);</span>
+<span class="lineNum">      53 </span>            : 
+<span class="lineNum">      54 </span>            :                 //Testing if council_room draws 4 and increments NumBuys for player, and draws 1 for remaining players
+<span class="lineNum">      55 </span><span class="lineCov">          1 :                 cardEffect(council_room, 0, 0, 0, &amp;gTest, position, 0);</span>
+<span class="lineNum">      56 </span>            :                 //playCard(council_room, 1, 0, 0, &amp;gTest);
+<span class="lineNum">      57 </span><span class="lineCov">          1 :                 if(gTest.handCount[player1] == preNumCards + 3)</span>
+<span class="lineNum">      58 </span><span class="lineCov">          1 :                         printf(&quot;HandCount TEST PASSED\n&quot;);</span>
+<span class="lineNum">      59 </span>            :                 else
+<span class="lineNum">      60 </span><span class="lineNoCov">          0 :                         printf(&quot;HandCount TEST FAILED\n&quot;);</span>
+<span class="lineNum">      61 </span>            :                 
+<span class="lineNum">      62 </span>            :                 //printf(&quot;%d&quot;, G.numBuys);
+<span class="lineNum">      63 </span>            :                 //preNumBuys++;
+<span class="lineNum">      64 </span><span class="lineCov">          1 :                 if(gTest.numBuys == preNumBuys + 1)</span>
+<span class="lineNum">      65 </span><span class="lineNoCov">          0 :                         printf(&quot;numBuys TEST PASSED\n&quot;);</span>
+<span class="lineNum">      66 </span>            :                 else 
+<span class="lineNum">      67 </span><span class="lineCov">          1 :                         printf(&quot;numBuys TEST FAILED\n&quot;);</span>
+<span class="lineNum">      68 </span>            :         }
+<span class="lineNum">      69 </span>            : 
+<span class="lineNum">      70 </span><span class="lineCov">          1 :         return 0;</span>
+<span class="lineNum">      71 </span>            : }
+<span class="lineNum">      72 </span>            : /*      
+<span class="lineNum">      73 </span>            :         struct gameState G;
+<span class="lineNum">      74 </span>            :         int k[10] = {village, smithy, gardens, mine, feast, adventurer, council_room, salvager, sea_hag, steward};
+<span class="lineNum">      75 </span>            : 
+<span class="lineNum">      76 </span>            :         initializeGame(2, k, 3, &amp;G);
+<span class="lineNum">      77 </span>            :         G.handCount[0] = 3;
+<span class="lineNum">      78 </span>            :         G.hand[0][0] = council_room; //council_room
+<span class="lineNum">      79 </span>            :         int preNumCards = G.handCount[0];
+<span class="lineNum">      80 </span>            :         int preNumBuys = G.numBuys;
+<span class="lineNum">      81 </span>            : 
+<span class="lineNum">      82 </span>            :         //Testing if council_room draws 4 and increments NumBuys for player, and draws 1 for remaining players
+<span class="lineNum">      83 </span>            :         cardEffect(council_room, 0, 0, 0, &amp;gTest, position, 0);
+<span class="lineNum">      84 </span>            :         if(G.handCount[0] == preNumCards + 4)
+<span class="lineNum">      85 </span>            :                 printf(&quot;TEST PASSED\n&quot;);
+<span class="lineNum">      86 </span>            :         else
+<span class="lineNum">      87 </span>            :                 printf(&quot;TEST FAILED\n&quot;);
+<span class="lineNum">      88 </span>            :         
+<span class="lineNum">      89 </span>            :         printf(&quot;%d&quot;, G.numBuys);
+<span class="lineNum">      90 </span>            :         //preNumBuys++;
+<span class="lineNum">      91 </span>            :         if(G.numBuys == preNumBuys + 1)
+<span class="lineNum">      92 </span>            :                 printf(&quot;TEST PASSED\n&quot;);
+<span class="lineNum">      93 </span>            : 
+<span class="lineNum">      94 </span>            : 
+<span class="lineNum">      95 </span>            : }*/
+</pre>
+      </td>
+    </tr>
+  </table>
+  <br>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+    <tr><td class="versionInfo">Generated by: <a href="http://ltp.sourceforge.net/coverage/lcov.php" target="_parent">LCOV version 1.13</a></td></tr>
+  </table>
+  <br>
+
+</body>
+</html>
