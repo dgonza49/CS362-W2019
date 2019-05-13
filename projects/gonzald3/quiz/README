@@ -1,0 +1,5 @@
+gcc -o testme -g testme.c -Wall -fpic --coverage -lm
+./testme
+gcov testme.c
+lcov --capture --directory . --output-file coverage.info
+genhtml coverage.info --output-directory out
