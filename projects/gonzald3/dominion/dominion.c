@@ -813,6 +813,7 @@ int villageCard(struct gameState *state, int handPos){
 	int currentPlayer = whoseTurn(state);
 	//+1 Card
 	/****Bug to remove drawCard phase and increase of actions by 2
+	
 	drawCard(currentPlayer, state);
 			
     //+2 Actions

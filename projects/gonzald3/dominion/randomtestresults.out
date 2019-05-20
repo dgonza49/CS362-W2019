@@ -1,0 +1,21 @@
+File 'randomtestadventurer.c'
+Lines executed:95.00% of 20
+Branches executed:100.00% of 10
+Taken at least once:80.00% of 10
+Calls executed:90.00% of 10
+Creating 'randomtestadventurer.c.gcov'
+
+File 'randomtestcard1.c'
+Lines executed:100.00% of 25
+Branches executed:100.00% of 6
+Taken at least once:83.33% of 6
+Calls executed:100.00% of 16
+Creating 'randomtestcard1.c.gcov'
+
+File 'randomtestcard2.c'
+Lines executed:91.30% of 23
+Branches executed:100.00% of 8
+Taken at least once:75.00% of 8
+Calls executed:86.67% of 15
+Creating 'randomtestcard2.c.gcov'
+

@@ -1,0 +1,92 @@
+        -:    0:Source:randomtestcard1.c
+        -:    0:Graph:randomtestcard1.gcno
+        -:    0:Data:randomtestcard1.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1:#include <stdio.h>
+        -:    2:#include <stdlib.h>
+        -:    3:#include <string.h>
+        -:    4:#include <math.h>
+        -:    5:#include "assert.h"
+        -:    6:#include "dominion.h"
+        -:    7:#include "dominion_helpers.h"
+        -:    8:#include "rngs.h"
+        -:    9:#include <time.h>
+        -:   10:
+        -:   11:
+function random_number called 25 returned 100% blocks executed 100%
+       25:   12:int random_number(int lower, int upper, int count) 
+        -:   13:{ 
+        -:   14:    int i, num; 
+       50:   15:    for (i = 0; i < count; i++) { 
+branch  0 taken 50%
+branch  1 taken 50% (fallthrough)
+       25:   16:        num = (rand() %(upper - lower + 1)) + lower; 
+call    0 returned 100%
+        -:   17:    } 
+       25:   18:	return num;
+        -:   19:}
+        -:   20:
+function main called 1 returned 100% blocks executed 100%
+        1:   21:int main() {
+        -:   22:	
+        1:   23:	srand(time(NULL));
+call    0 returned 100%
+call    1 returned 100%
+        1:   24:    int player = 0;
+        1:   25:    int i, failures = 0;
+        -:   26:	struct gameState state, test;
+        1:   27:	int k[10] = {village, smithy, gardens, mine, feast, adventurer, council_room, salvager, sea_hag, steward};
+        -:   28:
+        5:   29:	for(i=0, failures=0; i < random_number(0, 500, 1) ; i++ )
+call    0 returned 100%
+branch  1 taken 80%
+branch  2 taken 20% (fallthrough)
+        -:   30:	{
+        4:   31:		int numPlayers = random_number(0, 50, 1);
+call    0 returned 100%
+        4:   32:		int seed = random_number(1, 1000, 1);
+call    0 returned 100%
+        -:   33:
+        -:   34:		// initialize a game state and player cards
+        4:   35:		initializeGame(numPlayers, k, seed, &state);		
+call    0 returned 100%
+        -:   36:
+        4:   37:		printf("----------Village Test #%d---------------\n", i+1);
+call    0 returned 100%
+        -:   38:
+        4:   39:		state.deckCount[player] = random_number(0, MAX_DECK, 1);
+call    0 returned 100%
+        4:   40:        state.discardCount[player] = random_number(0, MAX_DECK, 1);
+call    0 returned 100%
+        4:   41:        state.handCount[player] = random_number(0, MAX_HAND, 1);		
+call    0 returned 100%
+        -:   42:       
+        -:   43:	   
+        -:   44:		// copy the game state to a test case
+        4:   45:		memcpy(&test, &state, sizeof(struct gameState));
+        -:   46:
+        -:   47:		
+        -:   48:		
+        4:   49:		cardEffect(village, 0, 0, 0, &state, 0, NULL);
+call    0 returned 100%
+        -:   50:
+        4:   51:		player = whoseTurn(&test);
+call    0 returned 100%
+        -:   52:	
+        -:   53:		
+        -:   54:       
+        4:   55:		if(test.numActions+2 != state.numActions){
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        4:   56:			printf("Failed where two extra action was added\n");
+call    0 returned 100%
+        4:   57:			failures++;
+        -:   58:		}
+        -:   59:    }
+        -:   60:
+        1:   61:    printf("\n\n");
+call    0 returned 100%
+        1:   62:    printf("Status: %d failures\n", failures);
+call    0 returned 100%
+        -:   63:}
