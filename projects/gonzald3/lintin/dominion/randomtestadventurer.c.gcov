@@ -1,0 +1,137 @@
+        -:    0:Source:randomtestadventurer.c
+        -:    0:Graph:randomtestadventurer.gcno
+        -:    0:Data:randomtestadventurer.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1:#include "dominion.h"
+        -:    2:#include "dominion_helpers.h"
+        -:    3:#include <string.h>
+        -:    4:#include <stdio.h>
+        -:    5:#include <assert.h>
+        -:    6:#include "rngs.h"
+        -:    7:#include <stdlib.h>
+        -:    8:
+        -:    9:#define TESTCARD "adventurer"
+        -:   10:
+function random_number called 6 returned 100% blocks executed 100%
+        6:   11:int random_number(int lower, int upper, int count) 
+        -:   12:{ 
+        -:   13:    int i, num; 
+       12:   14:    for (i = 0; i < count; i++) { 
+branch  0 taken 50%
+branch  1 taken 50% (fallthrough)
+        6:   15:        num = (rand() %(upper - lower + 1)) + lower; 
+call    0 returned 100%
+        -:   16:    } 
+        6:   17:	return num;
+        -:   18:}
+        -:   19:
+function main called 1 returned 100% blocks executed 91%
+        1:   20:int main() {
+        -:   21:
+        1:   22:    int thisPlayer = 0;
+        1:   23:    int drawntreasure=0;
+        1:   24:    int cardDrawn = 0;
+        1:   25:    int i,z = 0;// z is the counter for the temp hand  
+        -:   26:
+        -:   27:	struct gameState G, testG;
+        1:   28:	int k[10] = {adventurer, embargo, village, minion, mine, cutpurse,
+        -:   29:			sea_hag, tribute, smithy, remodel};
+        -:   30:
+        -:   31:
+        6:   32:    for(i = 0; i < random_number(0, 30, 1); i++) {  
+call    0 returned 100%
+branch  1 taken 83%
+branch  2 taken 17% (fallthrough)
+        5:   33:        int numPlayers = (rand() % 3) + 2;   //randomize the number of player
+call    0 returned 100%
+        5:   34:        int seed = (rand() % 5000) + 1;     //random seed 
+call    0 returned 100%
+        5:   35:        G.deckCount[thisPlayer] = rand() % MAX_DECK;//randomize deck size
+call    0 returned 100%
+        5:   36:	    G.handCount[thisPlayer] = rand() % MAX_HAND;//randomize hand size
+call    0 returned 100%
+        -:   37:
+        -:   38:            // initialize a game state and player cards
+        5:   39:            initializeGame(numPlayers, k, seed, &G);
+call    0 returned 100%
+        5:   40:            G.hand[thisPlayer][0] = copper;
+        5:   41:            G.hand[thisPlayer][1] = adventurer;
+        5:   42:            G.hand[thisPlayer][2] = village;
+        5:   43:            G.hand[thisPlayer][3] = smithy;
+        5:   44:            G.hand[thisPlayer][4] = mine;
+        -:   45:
+        -:   46:
+        5:   47:            printf("----------------- Random Test for for: %s ----------------\n", TESTCARD);
+call    0 returned 100%
+        -:   48:
+        -:   49:            // ----------- TEST 1: Happy case --------------
+        -:   50:            // copy the game state to a test case
+        5:   51:            memcpy(&testG, &G, sizeof(struct gameState));
+        -:   52:
+        -:   53:
+        -:   54:
+        5:   55:            int totalCards = testG.deckCount[thisPlayer] + testG.handCount[thisPlayer] + testG.discardCount[thisPlayer];
+        5:   56:            adventurerCardEffect(drawntreasure, &testG, thisPlayer, cardDrawn, z);
+call    0 returned 100%
+        5:   57:            expectTwoMoreTreasureCardsInHand(&testG, thisPlayer);
+call    0 returned 100%
+        5:   58:            assert(totalCards == (testG.deckCount[thisPlayer] + testG.handCount[thisPlayer] + testG.discardCount[thisPlayer]));
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+call    2 never executed
+        -:   59:
+        -:   60:            // ----------- TEST 2: deck is empty--------------
+        5:   61:            memcpy(&testG, &G, sizeof(struct gameState));
+        5:   62:            moveDeckCardsToDiscard(&testG, thisPlayer);
+call    0 returned 100%
+        5:   63:            adventurerCardEffect(drawntreasure, &testG, thisPlayer, cardDrawn, z);
+call    0 returned 100%
+        5:   64:            expectTwoMoreTreasureCardsInHand(&testG, thisPlayer);
+call    0 returned 100%
+        5:   65:            assert(totalCards == (testG.deckCount[thisPlayer] + testG.handCount[thisPlayer] + testG.discardCount[thisPlayer]));
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+call    2 never executed
+        -:   66:}
+        1:   67:            printf("\n >>>>> SUCCESS: Random Test complete for %s <<<<<\n\n", TESTCARD);
+call    0 returned 100%
+        -:   68:            
+        1:   69:            return 0;
+        -:   70:        }
+        -:   71:
+function expectTwoMoreTreasureCardsInHand called 10 returned 100% blocks executed 90%
+       10:   72:        int expectTwoMoreTreasureCardsInHand(struct gameState *state, int thisPlayer) {
+       10:   73:            int treasureCount = 0;
+       80:   74:            for (int i = 0; i < state->handCount[thisPlayer]; i++) {
+branch  0 taken 88%
+branch  1 taken 13% (fallthrough)
+       70:   75:                int card = state->hand[thisPlayer][i];
+       70:   76:                if (card >= copper && card <= gold) {
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+branch  2 taken 43% (fallthrough)
+branch  3 taken 57%
+       30:   77:                    treasureCount++;
+        -:   78:                }
+        -:   79:            }
+       10:   80:            printf("treasure card in hand: %d, expect player can still get 2 treasure cards after shuffle. \n", treasureCount);
+call    0 returned 100%
+       10:   81:            assert(treasureCount == 3); // +1 already in hand
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+call    2 never executed
+       10:   82:        }
+        -:   83:
+function moveDeckCardsToDiscard called 5 returned 100% blocks executed 100%
+        5:   84:        int moveDeckCardsToDiscard(struct gameState *state, int thisPlayer) {
+       30:   85:            for (int i = 0; i < state->deckCount[thisPlayer]; i++) {
+branch  0 taken 83%
+branch  1 taken 17% (fallthrough)
+       25:   86:                int card = state->deck[thisPlayer][i];
+       25:   87:                state->discard[thisPlayer][state->discardCount[thisPlayer]] = card;
+       25:   88:                state->discardCount[thisPlayer]++;
+        -:   89:            }
+        5:   90:            state->deckCount[thisPlayer] = 0;
+        -:   91:        
+        5:   92:}

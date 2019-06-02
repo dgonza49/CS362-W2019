@@ -1,0 +1,45 @@
+unittest1.c:
+----------------- Testing refactored function for: smithyCardEffect ----------------
+TEST :+3 cards
+hand count = 8, expected = 7
+deck count = 1, expected = 2
+coins = 4, expected = 4
+Failed: Testing complete smithyCardEffect 
+unittest2.c:
+TESTING shuffle() of Kingdom Cards
+Shuffle Percentage: 100/100 
+TEST PASSED 
+--------------Test Complete-----------------------
+unittest3.c:
+TESTING buyCard() 
+TEST PASSED
+--------------Test Complete-----------------------
+unittest4.c:
+TESTING updateCoins() 
+TEST PASSED
+--------------Test Complete-----------------------
+cardtest1.c:
+TESTING smithy 
+TEST Failed
+Expected hand count of 9, actual hand count is 8
+--------------Test Complete-----------------------
+cardtest2.c:
+TESTING adventurer 
+TEST PASSED
+--------------Test Complete-----------------------
+cardtest3.c:
+TESTING feast 
+TEST PASSED
+--------------Test Complete-----------------------
+cardtest4.c:
+TESTING council_room 
+HandCount TEST PASSED
+numBuys TEST PASSED
+--------------Test Complete-----------------------
+File 'dominion.c'
+Lines executed:19.54% of 609
+Branches executed:23.63% of 419
+Taken at least once:15.04% of 419
+Calls executed:11.58% of 95
+Creating 'dominion.c.gcov'
+

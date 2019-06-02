@@ -1,0 +1,163 @@
+randomtestadventurer.c:
+----------------- Random Test for for: adventurer ----------------
+treasure card in hand: 3, expect player can still get 2 treasure cards after shuffle. 
+treasure card in hand: 3, expect player can still get 2 treasure cards after shuffle. 
+----------------- Random Test for for: adventurer ----------------
+treasure card in hand: 3, expect player can still get 2 treasure cards after shuffle. 
+treasure card in hand: 3, expect player can still get 2 treasure cards after shuffle. 
+----------------- Random Test for for: adventurer ----------------
+treasure card in hand: 3, expect player can still get 2 treasure cards after shuffle. 
+treasure card in hand: 3, expect player can still get 2 treasure cards after shuffle. 
+----------------- Random Test for for: adventurer ----------------
+treasure card in hand: 3, expect player can still get 2 treasure cards after shuffle. 
+treasure card in hand: 3, expect player can still get 2 treasure cards after shuffle. 
+----------------- Random Test for for: adventurer ----------------
+treasure card in hand: 3, expect player can still get 2 treasure cards after shuffle. 
+treasure card in hand: 3, expect player can still get 2 treasure cards after shuffle. 
+
+ >>>>> SUCCESS: Random Test complete for adventurer <<<<<
+
+File 'randomtestadventurer.c'
+Lines executed:100.00% of 50
+Branches executed:100.00% of 18
+Taken at least once:77.78% of 18
+Calls executed:83.33% of 18
+Creating 'randomtestadventurer.c.gcov'
+
+randomtestcard1.c:
+----------Village Test #1---------------
+Failed where two extra action was added
+----------Village Test #2---------------
+Failed where two extra action was added
+----------Village Test #3---------------
+Failed where two extra action was added
+----------Village Test #4---------------
+Failed where two extra action was added
+----------Village Test #5---------------
+Failed where two extra action was added
+----------Village Test #6---------------
+Failed where two extra action was added
+----------Village Test #7---------------
+Failed where two extra action was added
+----------Village Test #8---------------
+Failed where two extra action was added
+----------Village Test #9---------------
+Failed where two extra action was added
+----------Village Test #10---------------
+Failed where two extra action was added
+----------Village Test #11---------------
+Failed where two extra action was added
+----------Village Test #12---------------
+Failed where two extra action was added
+----------Village Test #13---------------
+Failed where two extra action was added
+----------Village Test #14---------------
+Failed where two extra action was added
+----------Village Test #15---------------
+Failed where two extra action was added
+----------Village Test #16---------------
+Failed where two extra action was added
+----------Village Test #17---------------
+Failed where two extra action was added
+----------Village Test #18---------------
+Failed where two extra action was added
+----------Village Test #19---------------
+Failed where two extra action was added
+----------Village Test #20---------------
+Failed where two extra action was added
+----------Village Test #21---------------
+Failed where two extra action was added
+----------Village Test #22---------------
+Failed where two extra action was added
+----------Village Test #23---------------
+Failed where two extra action was added
+----------Village Test #24---------------
+Failed where two extra action was added
+----------Village Test #25---------------
+Failed where two extra action was added
+----------Village Test #26---------------
+Failed where two extra action was added
+----------Village Test #27---------------
+Failed where two extra action was added
+----------Village Test #28---------------
+Failed where two extra action was added
+----------Village Test #29---------------
+Failed where two extra action was added
+----------Village Test #30---------------
+Failed where two extra action was added
+----------Village Test #31---------------
+Failed where two extra action was added
+----------Village Test #32---------------
+Failed where two extra action was added
+----------Village Test #33---------------
+Failed where two extra action was added
+
+
+Status: 33 failures
+File 'randomtestcard1.c'
+Lines executed:100.00% of 25
+Branches executed:100.00% of 6
+Taken at least once:83.33% of 6
+Calls executed:100.00% of 16
+Creating 'randomtestcard1.c.gcov'
+
+randomtestcard2.c:
+---------Smithy Test #1----------
+Passed where player discarded smithy
+Failed where 3 extra cards were not drawn
+---------Smithy Test #2----------
+Passed where player discarded smithy
+Failed where 3 extra cards were not drawn
+---------Smithy Test #3----------
+Passed where player discarded smithy
+Failed where 3 extra cards were not drawn
+---------Smithy Test #4----------
+Passed where player discarded smithy
+Failed where 3 extra cards were not drawn
+---------Smithy Test #5----------
+Passed where player discarded smithy
+Failed where 3 extra cards were not drawn
+---------Smithy Test #6----------
+Passed where player discarded smithy
+Failed where 3 extra cards were not drawn
+---------Smithy Test #7----------
+Passed where player discarded smithy
+Failed where 3 extra cards were not drawn
+---------Smithy Test #8----------
+Passed where player discarded smithy
+Failed where 3 extra cards were not drawn
+---------Smithy Test #9----------
+Passed where player discarded smithy
+Failed where 3 extra cards were not drawn
+---------Smithy Test #10----------
+Passed where player discarded smithy
+Failed where 3 extra cards were not drawn
+---------Smithy Test #11----------
+Passed where player discarded smithy
+Failed where 3 extra cards were not drawn
+---------Smithy Test #12----------
+Passed where player discarded smithy
+Failed where 3 extra cards were not drawn
+---------Smithy Test #13----------
+Passed where player discarded smithy
+Failed where 3 extra cards were not drawn
+---------Smithy Test #14----------
+Passed where player discarded smithy
+Failed where 3 extra cards were not drawn
+---------Smithy Test #15----------
+Passed where player discarded smithy
+Failed where 3 extra cards were not drawn
+---------Smithy Test #16----------
+Passed where player discarded smithy
+Failed where 3 extra cards were not drawn
+---------Smithy Test #17----------
+Passed where player discarded smithy
+Failed where 3 extra cards were not drawn
+---------------------------------------------
+File 'randomtestcard2.c'
+Lines executed:91.30% of 23
+Branches executed:100.00% of 8
+Taken at least once:75.00% of 8
+Calls executed:86.67% of 15
+Creating 'randomtestcard2.c.gcov'
+
