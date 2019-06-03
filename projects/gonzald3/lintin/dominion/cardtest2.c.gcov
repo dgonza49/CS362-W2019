@@ -1,0 +1,42 @@
+        -:    0:Source:cardtest2.c
+        -:    0:Graph:cardtest2.gcno
+        -:    0:Data:cardtest2.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1:#include "dominion.h"
+        -:    2:#include "dominion_helpers.h"
+        -:    3:#include "rngs.h"
+        -:    4:#include <stdio.h>
+        -:    5:#include <math.h>
+        -:    6:#include <stdlib.h>
+        -:    7:#include "assert.h"
+        -:    8:
+        -:    9:
+        -:   10:
+        -:   11:// Unit Test for Adventurer
+        -:   12:
+function main called 1 returned 100% blocks executed 89%
+        1:   13:int main () {
+        -:   14:	
+        1:   15:	printf("TESTING adventurer \n");
+call    0 returned 100%
+        -:   16:
+        -:   17:	struct gameState G;
+        1:   18:	int k[10] = {village, smithy, gardens, mine, feast, adventurer, council_room, salvager, sea_hag, steward}; //7 is adventurer
+        -:   19:
+        1:   20:	initializeGame(2, k, 4, &G);
+call    0 returned 100%
+        -:   21:	
+        -:   22:
+        1:   23:	assert(cardEffect(adventurer, 0, 0, 0, &G, 0, NULL) == 0);
+call    0 returned 100%
+branch  1 taken 0% (fallthrough)
+branch  2 taken 100%
+call    3 never executed
+        1:   24:	printf("TEST PASSED\n");
+call    0 returned 100%
+        -:   25:	
+        1:   26:	printf("--------------Test Complete-----------------------\n");
+call    0 returned 100%
+        -:   27:
+        -:   28:}

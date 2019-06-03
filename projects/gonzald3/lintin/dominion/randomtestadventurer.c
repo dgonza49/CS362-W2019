@@ -78,7 +78,11 @@ int main() {
                 }
             }
             printf("treasure card in hand: %d, expect player can still get 2 treasure cards after shuffle. \n", treasureCount);
-            assert(treasureCount == 3); // +1 already in hand
+            if(treasureCount == 3){
+					printf("Treasure count test passed!\n");
+			}else{
+				printf("Treasure count failed!\n");
+			}// +1 already in hand
         }
 
         int moveDeckCardsToDiscard(struct gameState *state, int thisPlayer) {

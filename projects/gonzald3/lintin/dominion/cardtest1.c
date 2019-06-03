@@ -45,19 +45,19 @@ int main() {
 		//kingCards++;
 		}
 
-		initHandCount = 6;
+		initHandCount = gTest.handCount[player1];
 		position = gTest.hand[player1][0]; //smithy ready to play
 
 		effect = cardEffect(smithy, 0, 0, 0, &gTest, position, 0);
 
 		// Testing that current player has drawn 3 cards
 		//The player has actually drawn 10 card!
-		if (gTest.handCount[player1] == initHandCount + 3) {
+		if (gTest.handCount[player1] == initHandCount + 2) {
 			printf("TEST PASSED\n");
 		}
 		else {
 			printf("TEST Failed\n");
-			printf("Expected hand count of %d, actual hand count is %d\n", initHandCount+3, gTest.handCount[player1]);
+			printf("Expected hand count of %d, actual hand count is %d\n", initHandCount+2, gTest.handCount[player1]);
 		}
 	}
 	

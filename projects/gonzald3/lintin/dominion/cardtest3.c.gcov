@@ -1,0 +1,76 @@
+        -:    0:Source:cardtest3.c
+        -:    0:Graph:cardtest3.gcno
+        -:    0:Data:cardtest3.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1:#include "dominion.h"
+        -:    2:#include "dominion_helpers.h"
+        -:    3:#include "rngs.h"
+        -:    4:#include <stdio.h>
+        -:    5:#include <math.h>
+        -:    6:#include <stdlib.h>
+        -:    7:#include "assert.h"
+        -:    8:#include <string.h>
+        -:    9:#include <time.h>
+        -:   10:
+        -:   11:
+        -:   12:
+        -:   13:// Unit Test for Feast
+        -:   14:
+function main called 1 returned 100% blocks executed 87%
+        1:   15:int main () {
+        -:   16:	
+        1:   17:	printf("TESTING feast \n");
+call    0 returned 100%
+        -:   18:	   
+        -:   19:	struct gameState gTest;   
+        -:   20:	struct gameState G;
+        1:   21:	int player1 = 0;
+        -:   22:	int initDeckCount;
+        -:   23:	//time_t end  = time(NULL) + 7; //7s
+        1:   24:	int effect = 1;
+        1:   25:	if(effect == 1)
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        1:   26:		effect = 0;
+        -:   27:
+        -:   28:
+        -:   29:	int n;
+        1:   30:	int k[10] = {village, smithy, gardens, mine, feast, adventurer, council_room, salvager, sea_hag, steward}; //7 is adventurer
+        -:   31:
+        1:   32:	initializeGame(2, k, 4, &G);
+call    0 returned 100%
+        -:   33:
+        -:   34:	// copy over to test gameState
+        1:   35:	memcpy(&gTest, &G, sizeof(struct gameState));
+        -:   36:
+        -:   37:	// load hand
+        1:   38:	gTest.hand[player1][0] = feast;
+        5:   39:	for(n = 1; n < 5; n++){
+branch  0 taken 80%
+branch  1 taken 20% (fallthrough)
+        4:   40:		gTest.hand[player1][n] = k[n+3];
+        -:   41:	}
+        -:   42:
+        1:   43:	initDeckCount = G.deckCount[player1];
+        1:   44:	playCard(feast, 1, 0, 0, &gTest);
+call    0 returned 100%
+        -:   45:		
+        -:   46:	// Testing that current player has drawn 1 card 
+        1:   47:	if (gTest.deckCount[player1] == initDeckCount) {
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        1:   48:		printf("TEST PASSED\n");
+call    0 returned 100%
+        -:   49:	}
+        -:   50:	else {
+    #####:   51:		printf("TEST Failed\n");
+call    0 never executed
+    #####:   52:		printf("Expected hand count of %d, actual hand count is %d\n", initDeckCount, gTest.deckCount[player1]);
+call    0 never executed
+        -:   53:	}
+        -:   54:	
+        1:   55:	printf("--------------Test Complete-----------------------\n");
+call    0 returned 100%
+        -:   56:
+        -:   57:}

@@ -5,37 +5,93 @@ hand count = 8, expected = 7
 deck count = 1, expected = 2
 coins = 4, expected = 4
 Failed: Testing complete smithyCardEffect 
+File 'unittest1.c'
+Lines executed:96.43% of 28
+Branches executed:100.00% of 8
+Taken at least once:62.50% of 8
+Calls executed:72.73% of 11
+Creating 'unittest1.c.gcov'
+
 unittest2.c:
 TESTING shuffle() of Kingdom Cards
-Shuffle Percentage: 100/100 
+Shuffle Percentage: 9/100 
 TEST PASSED 
 --------------Test Complete-----------------------
+File 'unittest2.c'
+Lines executed:95.24% of 21
+Branches executed:100.00% of 6
+Taken at least once:83.33% of 6
+Calls executed:90.91% of 11
+Creating 'unittest2.c.gcov'
+
 unittest3.c:
 TESTING buyCard() 
 TEST PASSED
 --------------Test Complete-----------------------
+File 'unittest3.c'
+Lines executed:100.00% of 22
+Branches executed:85.71% of 14
+Taken at least once:57.14% of 14
+Calls executed:83.33% of 12
+Creating 'unittest3.c.gcov'
+
 unittest4.c:
 TESTING updateCoins() 
 TEST PASSED
 --------------Test Complete-----------------------
+File 'unittest4.c'
+Lines executed:100.00% of 14
+Branches executed:100.00% of 4
+Taken at least once:50.00% of 4
+Calls executed:83.33% of 6
+Creating 'unittest4.c.gcov'
+
 cardtest1.c:
 TESTING smithy 
 TEST Failed
-Expected hand count of 9, actual hand count is 8
+Expected hand count of 7, actual hand count is 8
 --------------Test Complete-----------------------
+File 'cardtest1.c'
+Lines executed:96.00% of 25
+Branches executed:100.00% of 8
+Taken at least once:75.00% of 8
+Calls executed:85.71% of 7
+Creating 'cardtest1.c.gcov'
+
 cardtest2.c:
 TESTING adventurer 
 TEST PASSED
 --------------Test Complete-----------------------
+File 'cardtest2.c'
+Lines executed:100.00% of 7
+Branches executed:100.00% of 2
+Taken at least once:50.00% of 2
+Calls executed:83.33% of 6
+Creating 'cardtest2.c.gcov'
+
 cardtest3.c:
 TESTING feast 
 TEST PASSED
 --------------Test Complete-----------------------
+File 'cardtest3.c'
+Lines executed:89.47% of 19
+Branches executed:100.00% of 6
+Taken at least once:66.67% of 6
+Calls executed:71.43% of 7
+Creating 'cardtest3.c.gcov'
+
 cardtest4.c:
 TESTING council_room 
 HandCount TEST PASSED
 numBuys TEST PASSED
 --------------Test Complete-----------------------
+File 'cardtest4.c'
+Lines executed:92.86% of 28
+Branches executed:100.00% of 10
+Taken at least once:70.00% of 10
+Calls executed:75.00% of 8
+Creating 'cardtest4.c.gcov'
+
 File 'dominion.c'
 Lines executed:19.54% of 609
 Branches executed:23.63% of 419

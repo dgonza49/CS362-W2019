@@ -1,0 +1,91 @@
+        -:    0:Source:unittest1.c
+        -:    0:Graph:unittest1.gcno
+        -:    0:Data:unittest1.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1:#include "dominion.h"
+        -:    2:#include "dominion_helpers.h"
+        -:    3:#include <string.h>
+        -:    4:#include <stdio.h>
+        -:    5:#include <assert.h>
+        -:    6:#include "rngs.h"
+        -:    7:#include <stdlib.h>
+        -:    8:
+        -:    9:#define TESTCARD "smithyCardEffect"
+        -:   10:
+function main called 1 returned 100% blocks executed 84%
+        1:   11:int main() {
+        1:   12: int newCards = 0;
+        1:   13:    int discarded = 1;
+        1:   14:    int xtraCoins = 0;
+        1:   15:    int shuffledCards = 0;
+        -:   16:
+        -:   17:    int n;
+        1:   18:    int handpos = 0;
+        1:   19:    int seed = 1000;
+        1:   20:    int numPlayers = 2;
+        1:   21:    int thisPlayer = 0;
+        1:   22:    int otherPlayer = 1;
+        -:   23:	struct gameState G, testG;
+        1:   24:	int k[10] = {adventurer, embargo, village, minion, mine, cutpurse,
+        -:   25:			sea_hag, tribute, smithy, remodel};
+        -:   26:
+        -:   27:	// initialize a game state and player cards
+        1:   28:	initializeGame(numPlayers, k, seed, &G);
+call    0 returned 100%
+        -:   29:
+        1:   30:	printf("----------------- Testing refactored function for: %s ----------------\n", TESTCARD);
+call    0 returned 100%
+        -:   31:
+        -:   32:	// ----------- TEST 1: +3 cards --------------
+        1:   33:	printf("TEST :+3 cards\n");
+call    0 returned 100%
+        -:   34:
+        -:   35:	// copy the game state to a test case
+        1:   36:	memcpy(&testG, &G, sizeof(struct gameState));
+        -:   37:	// cardEffect(steward, choice1, choice2, choice3, &testG, handpos, &bonus);
+        1:   38:	smithyCardEffect(thisPlayer, &testG, handpos);
+call    0 returned 100%
+        -:   39:
+        1:   40:	newCards = 3;
+        1:   41:	xtraCoins = 0;
+        1:   42:	printf("hand count = %d, expected = %d\n", testG.handCount[thisPlayer], G.handCount[thisPlayer] + newCards - discarded);
+call    0 returned 100%
+        1:   43:	printf("deck count = %d, expected = %d\n", testG.deckCount[thisPlayer], G.deckCount[thisPlayer] - newCards + shuffledCards);
+call    0 returned 100%
+        1:   44:	printf("coins = %d, expected = %d\n", testG.coins, G.coins + xtraCoins);
+call    0 returned 100%
+        1:   45:	if(testG.handCount[thisPlayer] == G.handCount[thisPlayer] + newCards - discarded){
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+    #####:   46:		printf("SUCCESS: Testing complete %s\n", TESTCARD);
+call    0 never executed
+        -:   47:	}else{
+        1:   48:		printf("Failed: Testing complete %s \n", TESTCARD);
+call    0 returned 100%
+        -:   49:	}
+        -:   50:		
+        -:   51:	//assert(testG.deckCount[thisPlayer] == G.deckCount[thisPlayer] - newCards + shuffledCards);
+        -:   52:	//assert(testG.coins == G.coins + xtraCoins);
+        -:   53:
+        -:   54:    //No state change should occur to the victory card piles and kingdom card piles. 
+       11:   55:    for (n = 0; n < 10; n++) {
+branch  0 taken 91%
+branch  1 taken 9% (fallthrough)
+       10:   56:        assert(testG.supplyCount[k[n]] == G.supplyCount[k[n]]);
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+call    2 never executed
+        -:   57:    }
+        -:   58:    
+        -:   59:    //No state change should occur for other players.
+        1:   60:	assert(testG.deckCount[otherPlayer] == G.deckCount[otherPlayer]);
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+call    2 never executed
+        -:   61:
+        -:   62:
+        -:   63:
+        1:   64:	return 0;
+        -:   65:}
+        -:   66:

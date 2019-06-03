@@ -1,27 +1,37 @@
 randomtestadventurer.c:
 ----------------- Random Test for for: adventurer ----------------
-treasure card in hand: 3, expect player can still get 2 treasure cards after shuffle. 
-treasure card in hand: 3, expect player can still get 2 treasure cards after shuffle. 
+treasure card in hand: 2, expect player can still get 2 treasure cards after shuffle. 
+Treasure count failed!
+treasure card in hand: 2, expect player can still get 2 treasure cards after shuffle. 
+Treasure count failed!
 ----------------- Random Test for for: adventurer ----------------
-treasure card in hand: 3, expect player can still get 2 treasure cards after shuffle. 
-treasure card in hand: 3, expect player can still get 2 treasure cards after shuffle. 
+treasure card in hand: 2, expect player can still get 2 treasure cards after shuffle. 
+Treasure count failed!
+treasure card in hand: 2, expect player can still get 2 treasure cards after shuffle. 
+Treasure count failed!
 ----------------- Random Test for for: adventurer ----------------
-treasure card in hand: 3, expect player can still get 2 treasure cards after shuffle. 
-treasure card in hand: 3, expect player can still get 2 treasure cards after shuffle. 
+treasure card in hand: 2, expect player can still get 2 treasure cards after shuffle. 
+Treasure count failed!
+treasure card in hand: 2, expect player can still get 2 treasure cards after shuffle. 
+Treasure count failed!
 ----------------- Random Test for for: adventurer ----------------
-treasure card in hand: 3, expect player can still get 2 treasure cards after shuffle. 
-treasure card in hand: 3, expect player can still get 2 treasure cards after shuffle. 
+treasure card in hand: 2, expect player can still get 2 treasure cards after shuffle. 
+Treasure count failed!
+treasure card in hand: 2, expect player can still get 2 treasure cards after shuffle. 
+Treasure count failed!
 ----------------- Random Test for for: adventurer ----------------
-treasure card in hand: 3, expect player can still get 2 treasure cards after shuffle. 
-treasure card in hand: 3, expect player can still get 2 treasure cards after shuffle. 
+treasure card in hand: 2, expect player can still get 2 treasure cards after shuffle. 
+Treasure count failed!
+treasure card in hand: 2, expect player can still get 2 treasure cards after shuffle. 
+Treasure count failed!
 
  >>>>> SUCCESS: Random Test complete for adventurer <<<<<
 
 File 'randomtestadventurer.c'
-Lines executed:100.00% of 50
+Lines executed:98.08% of 52
 Branches executed:100.00% of 18
 Taken at least once:77.78% of 18
-Calls executed:83.33% of 18
+Calls executed:84.21% of 19
 Creating 'randomtestadventurer.c.gcov'
 
 randomtestcard1.c:
@@ -91,9 +101,11 @@ Failed where two extra action was added
 Failed where two extra action was added
 ----------Village Test #33---------------
 Failed where two extra action was added
+----------Village Test #34---------------
+Failed where two extra action was added
 
 
-Status: 33 failures
+Status: 34 failures
 File 'randomtestcard1.c'
 Lines executed:100.00% of 25
 Branches executed:100.00% of 6
@@ -114,45 +126,6 @@ Failed where 3 extra cards were not drawn
 ---------Smithy Test #4----------
 Passed where player discarded smithy
 Failed where 3 extra cards were not drawn
----------Smithy Test #5----------
-Passed where player discarded smithy
-Failed where 3 extra cards were not drawn
----------Smithy Test #6----------
-Passed where player discarded smithy
-Failed where 3 extra cards were not drawn
----------Smithy Test #7----------
-Passed where player discarded smithy
-Failed where 3 extra cards were not drawn
----------Smithy Test #8----------
-Passed where player discarded smithy
-Failed where 3 extra cards were not drawn
----------Smithy Test #9----------
-Passed where player discarded smithy
-Failed where 3 extra cards were not drawn
----------Smithy Test #10----------
-Passed where player discarded smithy
-Failed where 3 extra cards were not drawn
----------Smithy Test #11----------
-Passed where player discarded smithy
-Failed where 3 extra cards were not drawn
----------Smithy Test #12----------
-Passed where player discarded smithy
-Failed where 3 extra cards were not drawn
----------Smithy Test #13----------
-Passed where player discarded smithy
-Failed where 3 extra cards were not drawn
----------Smithy Test #14----------
-Passed where player discarded smithy
-Failed where 3 extra cards were not drawn
----------Smithy Test #15----------
-Passed where player discarded smithy
-Failed where 3 extra cards were not drawn
----------Smithy Test #16----------
-Passed where player discarded smithy
-Failed where 3 extra cards were not drawn
----------Smithy Test #17----------
-Passed where player discarded smithy
-Failed where 3 extra cards were not drawn
 ---------------------------------------------
 File 'randomtestcard2.c'
 Lines executed:91.30% of 23
@@ -160,4 +133,11 @@ Branches executed:100.00% of 8
 Taken at least once:75.00% of 8
 Calls executed:86.67% of 15
 Creating 'randomtestcard2.c.gcov'
+
+File 'unittest1.c'
+Lines executed:96.43% of 28
+Branches executed:100.00% of 8
+Taken at least once:62.50% of 8
+Calls executed:72.73% of 11
+Creating 'unittest1.c.gcov'
 

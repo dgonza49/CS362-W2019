@@ -1,0 +1,88 @@
+        -:    0:Source:cardtest1.c
+        -:    0:Graph:cardtest1.gcno
+        -:    0:Data:cardtest1.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1:#include "dominion.h"
+        -:    2:#include "dominion_helpers.h"
+        -:    3:#include "rngs.h"
+        -:    4:#include <stdio.h>
+        -:    5:#include <math.h>
+        -:    6:#include <stdlib.h>
+        -:    7:#include "assert.h"
+        -:    8:#include <string.h>
+        -:    9:
+        -:   10:
+function main called 1 returned 100% blocks executed 94%
+        1:   11:int main() {
+        -:   12:	struct gameState g;          
+        -:   13:	struct gameState gTest;          
+        1:   14:	int seed = 1000;
+        1:   15:	int k[10] = {village, smithy, gardens, mine, feast, adventurer, council_room, salvager, sea_hag, steward};
+        1:   16:	int player1 = 0;
+        1:   17:	int players = 2;
+        1:   18:	int numTests = 1; 
+        -:   19:	//int card = smithy;
+        1:   20:	int effect = 1;
+        -:   21:	int initHandCount;
+        -:   22:	int position;
+        -:   23:
+        -:   24:
+        1:   25:	if(effect == 1)
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        1:   26:		effect = 0;
+        -:   27:
+        1:   28:	printf("TESTING smithy \n");
+call    0 returned 100%
+        -:   29:
+        -:   30:	int i;
+        -:   31:	int n;
+        2:   32:	for (i = 0; i < numTests; i++) {
+branch  0 taken 50%
+branch  1 taken 50% (fallthrough)
+        -:   33:
+        -:   34:		// initialize the game
+        1:   35:		initializeGame(players, k, seed, &g);
+call    0 returned 100%
+        -:   36:
+        -:   37:		// copy over to test gameState
+        1:   38:		memcpy(&gTest, &g, sizeof(struct gameState));
+        -:   39:
+        -:   40:		// load hand
+        1:   41:		gTest.hand[player1][0] = smithy;
+        -:   42:		//int kingCards = 14;
+        5:   43:		for(n = 1; n < 5; n++){
+branch  0 taken 80%
+branch  1 taken 20% (fallthrough)
+        4:   44:			gTest.hand[player1][n] = k[n+3];
+        -:   45:		//kingCards++;
+        -:   46:		}
+        -:   47:
+        1:   48:		initHandCount = gTest.handCount[player1];
+        1:   49:		position = gTest.hand[player1][0]; //smithy ready to play
+        -:   50:
+        1:   51:		effect = cardEffect(smithy, 0, 0, 0, &gTest, position, 0);
+call    0 returned 100%
+        -:   52:
+        -:   53:		// Testing that current player has drawn 3 cards
+        -:   54:		//The player has actually drawn 10 card!
+        1:   55:		if (gTest.handCount[player1] == initHandCount + 2) {
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+    #####:   56:			printf("TEST PASSED\n");
+call    0 never executed
+        -:   57:		}
+        -:   58:		else {
+        1:   59:			printf("TEST Failed\n");
+call    0 returned 100%
+        1:   60:			printf("Expected hand count of %d, actual hand count is %d\n", initHandCount+2, gTest.handCount[player1]);
+call    0 returned 100%
+        -:   61:		}
+        -:   62:	}
+        -:   63:	
+        1:   64:	printf("--------------Test Complete-----------------------\n");
+call    0 returned 100%
+        -:   65:
+        1:   66:	return 0;
+        -:   67:}

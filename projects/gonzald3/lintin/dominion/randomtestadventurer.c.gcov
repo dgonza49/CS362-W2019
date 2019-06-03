@@ -100,38 +100,43 @@ call    0 returned 100%
         1:   69:            return 0;
         -:   70:        }
         -:   71:
-function expectTwoMoreTreasureCardsInHand called 10 returned 100% blocks executed 90%
+function expectTwoMoreTreasureCardsInHand called 10 returned 100% blocks executed 91%
        10:   72:        int expectTwoMoreTreasureCardsInHand(struct gameState *state, int thisPlayer) {
        10:   73:            int treasureCount = 0;
-       80:   74:            for (int i = 0; i < state->handCount[thisPlayer]; i++) {
-branch  0 taken 88%
-branch  1 taken 13% (fallthrough)
-       70:   75:                int card = state->hand[thisPlayer][i];
-       70:   76:                if (card >= copper && card <= gold) {
+       70:   74:            for (int i = 0; i < state->handCount[thisPlayer]; i++) {
+branch  0 taken 86%
+branch  1 taken 14% (fallthrough)
+       60:   75:                int card = state->hand[thisPlayer][i];
+       60:   76:                if (card >= copper && card <= gold) {
 branch  0 taken 100% (fallthrough)
 branch  1 taken 0%
-branch  2 taken 43% (fallthrough)
-branch  3 taken 57%
-       30:   77:                    treasureCount++;
+branch  2 taken 33% (fallthrough)
+branch  3 taken 67%
+       20:   77:                    treasureCount++;
         -:   78:                }
         -:   79:            }
        10:   80:            printf("treasure card in hand: %d, expect player can still get 2 treasure cards after shuffle. \n", treasureCount);
 call    0 returned 100%
-       10:   81:            assert(treasureCount == 3); // +1 already in hand
+       10:   81:            if(treasureCount == 3){
 branch  0 taken 0% (fallthrough)
 branch  1 taken 100%
-call    2 never executed
-       10:   82:        }
-        -:   83:
+    #####:   82:					printf("Treasure count test passed!\n");
+call    0 never executed
+        -:   83:			}else{
+       10:   84:				printf("Treasure count failed!\n");
+call    0 returned 100%
+        -:   85:			}// +1 already in hand
+       10:   86:        }
+        -:   87:
 function moveDeckCardsToDiscard called 5 returned 100% blocks executed 100%
-        5:   84:        int moveDeckCardsToDiscard(struct gameState *state, int thisPlayer) {
-       30:   85:            for (int i = 0; i < state->deckCount[thisPlayer]; i++) {
+        5:   88:        int moveDeckCardsToDiscard(struct gameState *state, int thisPlayer) {
+       30:   89:            for (int i = 0; i < state->deckCount[thisPlayer]; i++) {
 branch  0 taken 83%
 branch  1 taken 17% (fallthrough)
-       25:   86:                int card = state->deck[thisPlayer][i];
-       25:   87:                state->discard[thisPlayer][state->discardCount[thisPlayer]] = card;
-       25:   88:                state->discardCount[thisPlayer]++;
-        -:   89:            }
-        5:   90:            state->deckCount[thisPlayer] = 0;
-        -:   91:        
-        5:   92:}
+       25:   90:                int card = state->deck[thisPlayer][i];
+       25:   91:                state->discard[thisPlayer][state->discardCount[thisPlayer]] = card;
+       25:   92:                state->discardCount[thisPlayer]++;
+        -:   93:            }
+        5:   94:            state->deckCount[thisPlayer] = 0;
+        -:   95:        
+        5:   96:}
